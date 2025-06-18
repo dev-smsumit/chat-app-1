@@ -54,7 +54,7 @@ const FriendRequest = () => {
     }
 
   return (
-    <div className='w-[32.5%] h-[49%] bg-[#ffffff62] z-20 shadow-md shadow-black rounded-md'>
+    <div className='w-full h-[200px] lg:w-[32.5%] lg:h-[49%] bg-[#ffffff62] z-20 shadow-md shadow-black rounded-md'>
         
         <div className='w-full h-full bg-[#0000ff17] rounded-b-md p-1' >
             <div className='w-full h-[20%] flex justify-between items-center'>

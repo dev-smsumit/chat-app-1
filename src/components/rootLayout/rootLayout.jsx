@@ -4,10 +4,11 @@ import RootLeft from '../../components/rootLayout/rootLeft.jsx';
 
 const RootLayout = () => {
   return (
-    <div className='bg-green-300 w-full h-screen flex gap-x-4 p-4'>
-        <RootLeft/>
-        <Outlet/>
+    <div className='bg-green-300 w-full min-h-screen lg:h-screen flex flex-col lg:flex-row gap-4 p-4'>
+      <RootLeft />
+      <Outlet />
     </div>
+
   )
 }
 

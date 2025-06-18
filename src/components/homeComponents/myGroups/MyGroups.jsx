@@ -26,11 +26,10 @@ const MyGroups = () => {
           setGroupList(groupListArr)
         })
       },[])
-      console.log(groupList);
       
 
   return (
-    <div className='w-[32.5%] h-[49%] bg-[#ffffff62] z-20 shadow-md shadow-black rounded-md'>
+    <div className='w-full h-[200px] lg:w-[32.5%] lg:h-[49%] bg-[#ffffff62] z-20 shadow-md shadow-black rounded-md'>
         
         <div className='w-full h-full bg-[#0000ff17] rounded-b-md p-1' >
             <div className='w-full h-[20%] flex justify-between items-center'>
@@ -48,7 +47,7 @@ const MyGroups = () => {
                 groupList?.map((item)=>(
                     <div className='flex justify-start items-center py-1 ' key={item.myGroupKey}>
                 <picture className='w-10 h-10 rounded-full shadow-md shadow-black overflow-hidden'>
-                    <img className='w-full h-full' src={item? item.whoCreateGroupProfilePic : boyChat} alt={item? item.whoCreateGroupProfilePic : boyChat} />
+                    <img className='w-full h-full' src={item? item.groupPhoto : boyChat} alt={item? item.whoCreateGroupProfilePic : boyChat} />
                 </picture>
                 <div className='basis-[60%] flex flex-col justify-center items-start ml-1'>
                     <h1 className='text-sm font-semibold'>{item.groupName}</h1>
