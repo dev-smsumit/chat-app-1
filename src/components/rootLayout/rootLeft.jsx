@@ -117,7 +117,7 @@ const RootLeft = () => {
 
 
   return (
-    <div className='w-full lg:w-[20%] h-full rounded-md bg-gradient-to-br from-primary1 to-primary2 relative overflow-hidden flex flex-col justify-center items-center'>
+    <div className='w-full lg:w-[20%] h-full rounded-md bg-gradient-to-br from-primary1 to-primary2 relative lg:overflow-hidden flex flex-col justify-center items-center'>
       <div className='z-20 w-full p-2 flex lg:flex-col justify-between lg:justify-center items-center'>
         <div>
           <span className='font-mono bg-gradient-to-r from-customRed to-customIndigo bg-clip-text text-transparent text-2xl font-bold -mt-3'>ChatMate</span>
@@ -127,6 +127,31 @@ const RootLeft = () => {
           <FaBars className="text-white text-2xl" />
         </button>
         </div>
+        {
+          menuOpen && (
+            <div className='absolute w-full top-full left-0 bg-gray-500 z-[9999] lg:hidden py-4'>
+          <ul className='flex flex-col gap-y-2 items-center'>
+            <li>
+              <Link className='flex items-end' to={'/root/home'}><IoHome className='text-[60px] px-1 pt-1 bg-green-300 rounded-t-3xl rounded-bl-md' /><h2 className={`text-xl font-bold uppercase bg-green-300 white pr-2 py-[2px] rounded-r-md border-r-8 ${location.pathname === '/root/home' ? 'border-red-600' : 'border-none'}`}>Home</h2></Link>
+            </li>
+            <li>
+              <Link className='flex items-end' to={'/root/chat'}><IoIosChatbubbles className='text-[60px] px-1 pt-1 bg-green-300 rounded-t-3xl rounded-bl-md' /><h2 className={`text-xl font-bold uppercase bg-green-300 white pr-2 py-[2px] rounded-r-md border-r-8 ${location.pathname === '/root/chat' ? 'border-red-600' : 'border-none'}`}>Chat</h2></Link>
+            </li>
+
+            <li>
+              <Link className='flex items-end' to={'/root/notification'}><IoMdNotifications className='text-[60px] px-1 pt-1 bg-green-300 rounded-t-3xl rounded-bl-md' /><h2 className={`text-xl font-bold uppercase bg-green-300 white pr-2 py-[2px] rounded-r-md border-r-8 ${location.pathname === '/root/notification' ? 'border-red-600' : 'border-none'}`}>Notification</h2></Link>
+            </li>
+            <li>
+              <Link className='flex items-end' to={'/root/setting'}><IoSettings className='text-[60px] px-1 pt-1 bg-green-300 rounded-t-3xl rounded-bl-md' /><h2 className={`text-xl font-bold uppercase bg-green-300 white pr-2 py-[2px] rounded-r-md border-r-8 ${location.pathname === '/root/setting' ? 'border-red-600' : 'border-none'}`}>Setting</h2></Link>
+            </li>
+            <li>
+              <Link className='flex items-end' to={'/login'}><RiLogoutBoxRFill className='text-[60px] px-1 pt-1 bg-green-300 rounded-t-3xl rounded-bl-md' /><h2 className='text-xl font-bold uppercase bg-green-300 pr-2 py-[2px] rounded-r-md'>Log Out</h2></Link>
+            </li>
+          </ul>
+          <button className='absolute top-2 right-2 bg-red-600 text-white p-2' onClick={()=> setMenuOpen(false)}>Back</button>
+        </div>
+          )
+        }
         <div className='flex flex-col items-center justify-center'>
           <div className='w-20 h-20 lg:w-28 lg:h-28 rounded-md bg-slate-600 shadow-md shadow-black overflow-hidden relative'>
           <picture>

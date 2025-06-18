@@ -158,7 +158,7 @@ const GroupList = () => {
   }, [])
 
   return (
-    <div className='w-full h-[200px] lg:w-[32.5%] lg:h-[49%] bg-[#ffffff62] z-20 shadow-md shadow-black rounded-md'>
+    <div className='w-full h-[200px] lg:w-[32.5%] lg:h-[49%] bg-[#ffffff62] shadow-md shadow-black rounded-md'>
       <div className='w-full h-[20%] bg-[#ef444423] flex justify-center items-center gap-x-2 rounded-t-md'>
         <CiSearch className='text-xl cursor-pointer' />
         <input type="text" className='w-[75%] h-10 rounded-md outline-none px-2 text-base font-mono' placeholder='Search here...' />
@@ -167,9 +167,9 @@ const GroupList = () => {
       <div className='w-full h-[80%] bg-[#0000ff17] rounded-b-md p-1' >
         <div className='w-full h-[20%] flex justify-between items-center'>
           <h1 className='text-lg font-bold uppercase flex'>Group List
-            <span class="relative flex h-6 w-6 ml-1">
-              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-300 opacity-75"></span>
-              <span class="relative flex justify-center items-center text-xs rounded-full h-6 w-6 bg-emerald-300 font-semibold">{groupList.length}</span>
+            <span className="relative flex h-6 w-6 ml-1">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-300 opacity-75"></span>
+              <span className="relative flex justify-center items-center text-xs rounded-full h-6 w-6 bg-emerald-300 font-semibold">{groupList.length}</span>
             </span>
           </h1>
           <button className='flex justify-center items-center bg-gradient-to-r from-customRed to-customIndigo text-white mt-2 px-2 py-1 rounded-md' onClick={openModal}>Create Group</button>

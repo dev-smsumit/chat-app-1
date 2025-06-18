@@ -44,9 +44,9 @@ const BlockedUser = () => {
         <div className='w-full h-full bg-[#0000ff17] rounded-b-md p-1' >
             <div className='w-full h-[20%] flex justify-between items-center'>
             <h1 className='text-lg font-bold uppercase flex'>blocked user
-                    <span class="relative flex h-6 w-6 ml-1">
-                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-300 opacity-75"></span>
-                    <span class="relative flex justify-center items-center text-xs rounded-full h-6 w-6 bg-emerald-300 font-semibold">{blockList?.length}</span>
+                    <span className="relative flex h-6 w-6 ml-1">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-300 opacity-75"></span>
+                    <span className="relative flex justify-center items-center text-xs rounded-full h-6 w-6 bg-emerald-300 font-semibold">{blockList?.length}</span>
                     </span>
                 </h1>
                 <BiDotsVertical className='text-xl cursor-pointer'/>
