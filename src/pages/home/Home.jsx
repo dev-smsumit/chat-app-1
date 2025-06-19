@@ -9,7 +9,7 @@ import BlockedUser from '../../components/homeComponents/blockedUser/BlockedUser
 
 const Home = () => {
   return (
-    <div className='flex flex-wrap h-full w-full lg:w-[80%] bg-white rounded-md relative justify-center items-center gap-y-4 lg:gap-x-2'>
+    <div className='flex flex-wrap h-full w-full lg:w-[80%] bg-white rounded-md relative justify-center items-center gap-y-4 lg:gap-y-0 md:gap-2 lg:gap-x-2'>
       <GroupList/>
       <Friends/>
       <UserList/>  

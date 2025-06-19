@@ -117,105 +117,110 @@ const RootLeft = () => {
 
 
   return (
-    <div className='w-full lg:w-[20%] h-full rounded-md bg-gradient-to-br from-primary1 to-primary2 relative lg:overflow-hidden flex flex-col justify-center items-center'>
+    <div className='w-full lg:w-[20%] h-full rounded-md bg-gradient-to-br from-primary1 to-primary2 relative lg:overflow-hidden flex flex-col justify-center items-center z-50'>
       <div className='z-20 w-full p-2 flex lg:flex-col justify-between lg:justify-center items-center'>
         <div>
           <span className='font-mono bg-gradient-to-r from-customRed to-customIndigo bg-clip-text text-transparent text-2xl font-bold -mt-3'>ChatMate</span>
         </div>
         <div className='lg:hidden'>
-          <button onClick={() => setMenuOpen(!menuOpen)}>
-          <FaBars className="text-white text-2xl" />
-        </button>
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            className="flex flex-col justify-between w-7 h-6 z-50 lg:hidden relative"
+          >
+            <span className={`block h-[3px] w-full bg-white transform transition duration-300 ease-in-out ${menuOpen ? 'rotate-45 translate-y-[10px]' : ''}`}></span>
+            <span className={`block h-[3px] w-full bg-white transition-all duration-300 ease-in-out ${menuOpen ? 'opacity-0' : ''}`}></span>
+            <span className={`block h-[3px] w-full bg-white transform transition duration-300 ease-in-out ${menuOpen ? '-rotate-45 -translate-y-[10px]' : ''}`}></span>
+          </button>
         </div>
         {
           menuOpen && (
-            <div className='absolute w-full top-full left-0 bg-gray-500 z-[9999] lg:hidden py-4'>
-          <ul className='flex flex-col gap-y-2 items-center'>
-            <li>
-              <Link className='flex items-end' to={'/root/home'}><IoHome className='text-[60px] px-1 pt-1 bg-green-300 rounded-t-3xl rounded-bl-md' /><h2 className={`text-xl font-bold uppercase bg-green-300 white pr-2 py-[2px] rounded-r-md border-r-8 ${location.pathname === '/root/home' ? 'border-red-600' : 'border-none'}`}>Home</h2></Link>
-            </li>
-            <li>
-              <Link className='flex items-end' to={'/root/chat'}><IoIosChatbubbles className='text-[60px] px-1 pt-1 bg-green-300 rounded-t-3xl rounded-bl-md' /><h2 className={`text-xl font-bold uppercase bg-green-300 white pr-2 py-[2px] rounded-r-md border-r-8 ${location.pathname === '/root/chat' ? 'border-red-600' : 'border-none'}`}>Chat</h2></Link>
-            </li>
+            <div className='absolute w-full top-full left-0 bg-gray-500 z-50 lg:hidden py-4'>
+              <ul className='flex flex-col gap-y-2 items-center'>
+                <li>
+                  <Link onClick={()=> setMenuOpen(false)} className='flex items-end' to={'/root/home'}><IoHome className='text-[60px] px-1 pt-1 bg-green-300 rounded-t-3xl rounded-bl-md' /><h2 className={`text-xl font-bold uppercase bg-green-300 white pr-2 py-[2px] rounded-r-md border-r-8 ${location.pathname === '/root/home' ? 'border-red-600' : 'border-none'}`}>Home</h2></Link>
+                </li>
+                <li>
+                  <Link onClick={()=> setMenuOpen(false)} className='flex items-end' to={'/root/chat'}><IoIosChatbubbles className='text-[60px] px-1 pt-1 bg-green-300 rounded-t-3xl rounded-bl-md' /><h2 className={`text-xl font-bold uppercase bg-green-300 white pr-2 py-[2px] rounded-r-md border-r-8 ${location.pathname === '/root/chat' ? 'border-red-600' : 'border-none'}`}>Chat</h2></Link>
+                </li>
 
-            <li>
-              <Link className='flex items-end' to={'/root/notification'}><IoMdNotifications className='text-[60px] px-1 pt-1 bg-green-300 rounded-t-3xl rounded-bl-md' /><h2 className={`text-xl font-bold uppercase bg-green-300 white pr-2 py-[2px] rounded-r-md border-r-8 ${location.pathname === '/root/notification' ? 'border-red-600' : 'border-none'}`}>Notification</h2></Link>
-            </li>
-            <li>
-              <Link className='flex items-end' to={'/root/setting'}><IoSettings className='text-[60px] px-1 pt-1 bg-green-300 rounded-t-3xl rounded-bl-md' /><h2 className={`text-xl font-bold uppercase bg-green-300 white pr-2 py-[2px] rounded-r-md border-r-8 ${location.pathname === '/root/setting' ? 'border-red-600' : 'border-none'}`}>Setting</h2></Link>
-            </li>
-            <li>
-              <Link className='flex items-end' to={'/login'}><RiLogoutBoxRFill className='text-[60px] px-1 pt-1 bg-green-300 rounded-t-3xl rounded-bl-md' /><h2 className='text-xl font-bold uppercase bg-green-300 pr-2 py-[2px] rounded-r-md'>Log Out</h2></Link>
-            </li>
-          </ul>
-          <button className='absolute top-2 right-2 bg-red-600 text-white p-2' onClick={()=> setMenuOpen(false)}>Back</button>
-        </div>
+                <li>
+                  <Link className='flex items-end' to={'/root/notification'}><IoMdNotifications className='text-[60px] px-1 pt-1 bg-green-300 rounded-t-3xl rounded-bl-md' /><h2 className={`text-xl font-bold uppercase bg-green-300 white pr-2 py-[2px] rounded-r-md border-r-8 ${location.pathname === '/root/notification' ? 'border-red-600' : 'border-none'}`}>Notification</h2></Link>
+                </li>
+                <li>
+                  <Link className='flex items-end' to={'/root/setting'}><IoSettings className='text-[60px] px-1 pt-1 bg-green-300 rounded-t-3xl rounded-bl-md' /><h2 className={`text-xl font-bold uppercase bg-green-300 white pr-2 py-[2px] rounded-r-md border-r-8 ${location.pathname === '/root/setting' ? 'border-red-600' : 'border-none'}`}>Setting</h2></Link>
+                </li>
+                <li>
+                  <Link className='flex items-end' to={'/login'}><RiLogoutBoxRFill className='text-[60px] px-1 pt-1 bg-green-300 rounded-t-3xl rounded-bl-md' /><h2 className='text-xl font-bold uppercase bg-green-300 pr-2 py-[2px] rounded-r-md'>Log Out</h2></Link>
+                </li>
+              </ul>
+              {/* <button className='absolute top-2 right-2 bg-red-600 text-white p-2' onClick={() => setMenuOpen(false)}>Back</button> */}
+            </div>
           )
         }
         <div className='flex flex-col items-center justify-center'>
           <div className='w-20 h-20 lg:w-28 lg:h-28 rounded-md bg-slate-600 shadow-md shadow-black overflow-hidden relative'>
-          <picture>
-            <img src={user ? user.userPhotoUrl : 'PHOTO NAI'} alt={user ? user.userPhotoUrl : 'PHOTO NAI'} className='h-full w-full' />
-          </picture>
+            <picture>
+              <img src={user ? user.userPhotoUrl : 'PHOTO NAI'} alt={user ? user.userPhotoUrl : 'PHOTO NAI'} className='h-full w-full' />
+            </picture>
 
-          <UploadButton
-            uploader={uploader}
-            options={options}
-            onComplete={async (files) => {
-              const fileUrl = files[0].fileUrl;
+            <UploadButton
+              uploader={uploader}
+              options={options}
+              onComplete={async (files) => {
+                const fileUrl = files[0].fileUrl;
 
-              try {
-                // ✅ Step 1: Fetch the image as a Blob
-                const response = await fetch(fileUrl);
-                const blob = await response.blob();
+                try {
+                  // ✅ Step 1: Fetch the image as a Blob
+                  const response = await fetch(fileUrl);
+                  const blob = await response.blob();
 
-                // ✅ Step 2: Convert Blob to Base64
-                const reader = new FileReader();
-                reader.readAsDataURL(blob);
+                  // ✅ Step 2: Convert Blob to Base64
+                  const reader = new FileReader();
+                  reader.readAsDataURL(blob);
 
-                reader.onload = async () => {
-                  const base64Image = reader.result;
+                  reader.onload = async () => {
+                    const base64Image = reader.result;
 
-                  // ✅ Step 3: Upload to Firebase Storage
-                  const uniquePath = `userProfileImages/images${uuidv4()}`;
-                  const imageRef = storageRef(storage, uniquePath);
-                  await uploadString(imageRef, base64Image, 'data_url');
+                    // ✅ Step 3: Upload to Firebase Storage
+                    const uniquePath = `userProfileImages/images${uuidv4()}`;
+                    const imageRef = storageRef(storage, uniquePath);
+                    await uploadString(imageRef, base64Image, 'data_url');
 
-                  const downloadURL = await getDownloadURL(imageRef);
+                    const downloadURL = await getDownloadURL(imageRef);
 
-                  // ✅ Step 4: Update Firebase Realtime Database and Auth
-                  await update(ref(db, `users/${user.userKey}`), {
-                    userPhotoUrl: downloadURL,
-                  });
+                    // ✅ Step 4: Update Firebase Realtime Database and Auth
+                    await update(ref(db, `users/${user.userKey}`), {
+                      userPhotoUrl: downloadURL,
+                    });
 
-                  await updateProfile(auth?.currentUser, {
-                    photoURL: downloadURL,
-                  });
+                    await updateProfile(auth?.currentUser, {
+                      photoURL: downloadURL,
+                    });
 
-                  // ✅ Step 3: Fix old friendRequests sent by this user
-                  await updateOldFriendRequests(auth.currentUser);
-                };
+                    // ✅ Step 3: Fix old friendRequests sent by this user
+                    await updateOldFriendRequests(auth.currentUser);
+                  };
 
-                reader.onerror = (error) => {
-                  console.error("Error converting Blob to Base64:", error);
-                };
-              } catch (err) {
-                console.error("Image upload failed:", err);
-              }
-            }}
-          >
-            {({ onClick }) => (
-              <button onClick={onClick}>
-                <FaCloudUploadAlt className='absolute bottom-1 left-1 text-green-300 drop-shadow-md shadow-black' />
-              </button>
-            )}
-          </UploadButton>
+                  reader.onerror = (error) => {
+                    console.error("Error converting Blob to Base64:", error);
+                  };
+                } catch (err) {
+                  console.error("Image upload failed:", err);
+                }
+              }}
+            >
+              {({ onClick }) => (
+                <button onClick={onClick}>
+                  <FaCloudUploadAlt className='absolute bottom-1 left-1 text-green-300 drop-shadow-md shadow-black' />
+                </button>
+              )}
+            </UploadButton>
 
-        </div>
-        <div className='mt-2 flex justify-center items-center gap-x-1'>
-          <h1 className='text-xl text-white capitalize'>{user ? user.userName : "name missing"}</h1>
-          <FaCloudUploadAlt className='bottom-1 left-1 text-green-300 drop-shadow-md shadow-black cursor-pointer' onClick={openModal} />
-        </div>
+          </div>
+          <div className='mt-2 flex justify-center items-center gap-x-1'>
+            <h1 className='text-xl text-white capitalize'>{user ? user.userName : "name missing"}</h1>
+            <FaCloudUploadAlt className='bottom-1 left-1 text-green-300 drop-shadow-md shadow-black cursor-pointer' onClick={openModal} />
+          </div>
         </div>
         <div className='mt-6 hidden lg:block'>
           <ul className='flex flex-col gap-y-2 items-center'>

@@ -158,7 +158,7 @@ const GroupList = () => {
   }, [])
 
   return (
-    <div className='w-full h-[200px] lg:w-[32.5%] lg:h-[49%] bg-[#ffffff62] shadow-md shadow-black rounded-md'>
+    <div className='w-full h-[200px] md:w-[49%] lg:w-[32.5%] lg:h-[49%] bg-[#ffffff62] shadow-md shadow-black rounded-md z-20'>
       <div className='w-full h-[20%] bg-[#ef444423] flex justify-center items-center gap-x-2 rounded-t-md'>
         <CiSearch className='text-xl cursor-pointer' />
         <input type="text" className='w-[75%] h-10 rounded-md outline-none px-2 text-base font-mono' placeholder='Search here...' />
