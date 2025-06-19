@@ -117,7 +117,7 @@ const RootLeft = () => {
 
 
   return (
-    <div className='w-full lg:w-[20%] h-full rounded-md bg-gradient-to-br from-primary1 to-primary2 relative lg:overflow-hidden flex flex-col justify-center items-center z-50'>
+    <div className='w-full lg:w-[20%] h-full rounded-md bg-gradient-to-bl from-primary2 to-primary1 backdrop-blur-sm relative lg:overflow-hidden flex flex-col justify-center items-center z-50'>
       <div className='z-20 w-full p-2 flex lg:flex-col justify-between lg:justify-center items-center'>
         <div>
           <span className='font-mono bg-gradient-to-r from-customRed to-customIndigo bg-clip-text text-transparent text-2xl font-bold -mt-3'>ChatMate</span>
@@ -245,9 +245,9 @@ const RootLeft = () => {
       </div>
 
       {/* background image */}
-      <picture className='absolute w-full h-full top-0 left-0 z-0 opacity-80'>
+      {/* <picture className='absolute w-full h-full top-0 left-0 z-0 opacity-80'>
         <img src={blocked} alt="network background" className='w-full h-full object-cover' />
-      </picture>
+      </picture> */}
       <div>
         <Modal
           className={'absolute z-50 w-76 h-50 p-4'}
