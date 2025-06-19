@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import blocked from '../../assets/blocked.png';
+// import blocked from '../../assets/blocked.png';
 import { Link, useLocation } from 'react-router-dom';
 import { IoHome } from "react-icons/io5";
 import { IoIosChatbubbles } from "react-icons/io";
@@ -10,7 +10,7 @@ import { Uploader } from "uploader";
 import { UploadButton } from "react-uploader";
 import { getAuth, updateProfile } from 'firebase/auth';
 import { getDatabase, ref, onValue, update, get } from 'firebase/database';
-import { FaCloudUploadAlt, FaBars } from "react-icons/fa";
+import { FaCloudUploadAlt } from "react-icons/fa";
 import Modal from 'react-modal';
 import { GiCrossMark } from "react-icons/gi";
 import { v4 as uuidv4 } from 'uuid';
@@ -77,6 +77,11 @@ const RootLeft = () => {
         ...prev,
         userName: newName,
       }));
+    }).then(()=>{
+      updateOldFriendRequests(auth.currentUser)
+    }).finally(()=>{
+      setIsOpen(false);
+      setNewName("");
     })
   }
 
@@ -108,7 +113,8 @@ const RootLeft = () => {
 
         if (requestData.whoSendFriendRequestUid === updatedUser.uid) {
           update(ref(db, `friendRequests/${requestKey}`), {
-            whoSendFriendRequestPhotoUrl: updatedUser.photoURL
+            whoSendFriendRequestPhotoUrl: updatedUser.photoURL,
+            whoSendFriendRequestName: newName,
           });
         }
       });
