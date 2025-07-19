@@ -22,20 +22,48 @@ const ChatRight = () => {
                     <span><BiDotsVertical className='text-xl cursor-pointer' /></span>
                 </div>
             </div>
-            <div className='w-full h-[70%] bg-blue-200'>
-                <div className='w-full flex justify-between'>
-                    <div className='w-[30%] flex flex-col items-center'>
-                    <div className='flex w-full bg-yellow-500 justify-center items-center'>
-                        fgdgf
+            <div className='w-full h-[70%] bg-emerald-100 py-3 px-3'>
+                <div className='w-full flex flex-col gap-y-4 justify-between'>
+                    <div className='w-[30%] self-start'>
+                        <div className='flex flex-col items-center'>
+                            <div className='flex w-full bg-yellow-500 justify-center items-center text-wrap py-2'>
+                                Hello, how are you?
+                            </div>
+                            <p>Time</p>
+                        </div>
                     </div>
-                    <p>Time</p>
-                </div>
-                <div className='w-[30%] flex flex-col items-center'>
-                    <div className='flex w-full bg-yellow-500 justify-center items-center'>
-                        fgdgf
+                    <div className='w-[30%] self-end'>
+                        <div className='flex flex-col items-center'>
+                            <div className='flex w-full bg-yellow-500 justify-center items-center text-wrap py-2'>
+                                Hi, I am well.
+                            </div>
+                            <p>Time</p>
+                        </div>
                     </div>
-                    <p>Time</p>
-                </div>
+                    <div className='w-[30%] self-start'>
+                        <div className='flex flex-col items-center'>
+                            <div className='flex w-full bg-yellow-500 justify-center items-center text-wrap py-2'>
+                                Hello, how are you?
+                            </div>
+                            <p>Time</p>
+                        </div>
+                    </div>
+                    <div className='w-[30%] self-start'>
+                        <div className='flex flex-col items-center'>
+                            <div className='flex w-full bg-yellow-500 justify-center items-center text-wrap py-2'>
+                                Hello, how are you?
+                            </div>
+                            <p>Time</p>
+                        </div>
+                    </div>
+                    <div className='w-[30%] self-end'>
+                        <div className='flex flex-col items-center'>
+                            <div className='flex w-full bg-yellow-500 justify-center items-center text-wrap py-2'>
+                                Hi, I am well.
+                            </div>
+                            <p>Time</p>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div className='w-full h-[10%] bg-red-200'>
