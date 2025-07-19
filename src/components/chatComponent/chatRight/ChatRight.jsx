@@ -1,10 +1,33 @@
-import React from 'react'
+import React, { useState } from 'react'
 import boyChat from "../../../assets/boyChat.gif"
 import { BiDotsVertical } from 'react-icons/bi'
 import { MdEmojiEmotions } from 'react-icons/md'
 import { FaCameraRetro, FaPaperPlane } from 'react-icons/fa'
+import EmojiPicker from 'emoji-picker-react';
 
 const ChatRight = () => {
+
+    const [emojiClick, setEmojiClick] = useState(false)
+    const [message, setMessage] = useState("")
+
+    // handle emoji click
+    const handleEmojiClick = ()=>{
+        setEmojiClick(!emojiClick)
+    }
+
+        const handleInput=(event)=>{
+        const {value} = event.target
+            setMessage(value)
+    }
+
+    // emojipicker function implement
+    const handleEmojiPicker =(event)=>{
+        setMessage((prev)=>{
+            console.log(prev);
+            
+            return `${prev}${event?.emoji}`
+        })
+    }
 
     return (
         <div className='w-full h-full py-2 px-14'>
@@ -70,14 +93,15 @@ const ChatRight = () => {
             </div>
 
             {/* chat bottom */}
-            <div className='w-full h-[10%]'>
+            <div className='w-full h-[10%] relative'>
                 <div className='w-full h-full flex justify-center gap-x-1 items-center'>
                     <div className='flex justify-center items-center w-full gap-x-1'>
-                        <input type="text" className='flex-grow bg-gray-100 p-2 rounded-md shadow-lg' placeholder='Type a massage'/>
+                        <input type="text" className='flex-grow bg-gray-100 p-2 rounded-md shadow-lg' placeholder='Type a massage' onChange={handleInput} value={message}/>
                         <div className='flex justify-center items-center gap-x-2'>
-                            <button className='w-full flex justify-center items-center text-3xl text-yellow-500'><MdEmojiEmotions /></button>
-                            <button className='w-full flex justify-center items-center text-2xl'><FaCameraRetro /></button>
-                            <button className='flex justify-center items-center text-md text-white bg-emerald-500 p-2 rounded-full'><FaPaperPlane /></button>
+                            <button className='w-full flex justify-center items-center text-3xl text-yellow-500'><span onClick={handleEmojiClick}><MdEmojiEmotions /></span>
+                            {emojiClick && <span className='absolute bottom-full left-1/3'><EmojiPicker onEmojiClick={handleEmojiPicker} /></span>}</button>
+                            <button className='w-full flex justify-center items-center text-2xl'><span><FaCameraRetro /></span></button>
+                            <button className='flex justify-center items-center text-md text-white bg-emerald-500 p-2 rounded-full'><span><FaPaperPlane /></span></button>
                         </div>
                     </div>
                     
