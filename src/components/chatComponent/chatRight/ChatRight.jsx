@@ -49,44 +49,44 @@ const ChatRight = () => {
             </div>
             <div className='w-full h-[70%] py-3 px-3 border-b-[1px] border-t-[1px] border-gray-200'>
                 <div className='w-full flex flex-col gap-y-4 justify-between'>
-                    <div className='w-[30%] self-start'>
-                        <div className='flex flex-col items-center'>
-                            <div className='flex w-full bg-yellow-500 justify-center items-center text-wrap py-2'>
+                    <div className='self-start'>
+                        <div className='flex flex-col items-start'>
+                            <div className='flex w-full bg-red-700 text-white justify-center items-center text-wrap p-2 rounded-t-2xl rounded-br-2xl'>
                                 Hello, how are you?
                             </div>
-                            <p>Time</p>
+                            <p className='text-xs text-gray-600'>Today, 2:01pm</p>
                         </div>
                     </div>
-                    <div className='w-[30%] self-end'>
-                        <div className='flex flex-col items-center'>
-                            <div className='flex w-full bg-yellow-500 justify-center items-center text-wrap py-2'>
+                    <div className='self-end'>
+                        <div className='flex flex-col items-end'>
+                            <div className='flex w-full bg-blue-700 text-white justify-center items-center text-wrap p-2 rounded-t-2xl rounded-bl-2xl'>
                                 Hi, I am well.
                             </div>
-                            <p>Time</p>
+                            <p className='text-xs text-gray-600'>Today, 2:01pm</p>
                         </div>
                     </div>
-                    <div className='w-[30%] self-start'>
-                        <div className='flex flex-col items-center'>
-                            <div className='flex w-full bg-yellow-500 justify-center items-center text-wrap py-2'>
+                    <div className='self-start'>
+                        <div className='flex flex-col items-start'>
+                            <div className='flex w-full bg-red-700 text-white justify-center items-center text-wrap p-2 rounded-t-2xl rounded-br-2xl'>
                                 Hello, how are you?
                             </div>
-                            <p>Time</p>
+                            <p className='text-xs text-gray-600'>Today, 2:01pm</p>
                         </div>
                     </div>
-                    <div className='w-[30%] self-start'>
-                        <div className='flex flex-col items-center'>
-                            <div className='flex w-full bg-yellow-500 justify-center items-center text-wrap py-2'>
+                    <div className='self-start'>
+                        <div className='flex flex-col items-start'>
+                            <div className='flex w-full bg-red-700 text-white justify-center items-center text-wrap p-2 rounded-t-2xl rounded-br-2xl'>
                                 Hello, how are you?
                             </div>
-                            <p>Time</p>
+                            <p className='text-xs text-gray-600'>Today, 2:01pm</p>
                         </div>
                     </div>
-                    <div className='w-[30%] self-end'>
-                        <div className='flex flex-col items-center'>
-                            <div className='flex w-full bg-yellow-500 justify-center items-center text-wrap py-2'>
+                    <div className='self-end'>
+                        <div className='flex flex-col items-end'>
+                            <div className='flex w-full bg-blue-700 text-white justify-center items-center text-wrap p-2 rounded-t-2xl rounded-bl-2xl'>
                                 Hi, I am well.
                             </div>
-                            <p>Time</p>
+                            <p className='text-xs text-gray-600'>Today, 2:01pm</p>
                         </div>
                     </div>
                 </div>
