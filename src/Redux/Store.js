@@ -1,5 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit'
+import FriendSlice from './Features/FriendSlice'
 
 export default configureStore({
-  reducer: {}
+  reducer: {
+    Friend : FriendSlice,
+  }
 })

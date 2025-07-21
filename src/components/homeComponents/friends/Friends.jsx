@@ -4,10 +4,13 @@ import { BiDotsVertical } from 'react-icons/bi';
 import { getDatabase, ref, onValue, set, push, remove } from "firebase/database";
 import { getAuth } from 'firebase/auth';
 import moment from 'moment/moment.js';
+import { useSelector, useDispatch } from 'react-redux';
+import { friendsAction } from '../../../Redux/Features/FriendSlice';
 
 const Friends = ({ isChat = false }) => {
     const db = getDatabase();
     const auth = getAuth();
+    const dispatch = useDispatch();
     const [friendList, setFriendList] = useState([]);
 
     /*
@@ -52,6 +55,13 @@ const Friends = ({ isChat = false }) => {
         })
     }
 
+    /*
+    todo: send friendInfo to redux store function implement
+    */
+   const handleFriends =(item={})=>{
+        dispatch(friendsAction(item))
+   }
+
     return (
         <div className={isChat ? 'w-full h-[200px] md:w-[49%] lg:w-[100%] lg:h-[100%] bg-[#ffffff62] shadow-md shadow-black rounded-md z-20' : 'w-full h-[200px] md:w-[49%] lg:w-[32.5%] lg:h-[49%] bg-[#ffffff62] shadow-md shadow-black rounded-md z-20'}>
 
@@ -69,12 +79,12 @@ const Friends = ({ isChat = false }) => {
                 <div className='h-[80%] w-full scrollbar-thin scrollbar-thumb-[#ef444485] scrollbar-track-[#0000ff62] overflow-y-scroll divide-y divide-solid divide-slate-300'>
                     {
                         friendList?.map((item) => (
-                            <div className='flex justify-start items-center py-1 ' key={item.friendKey}>
-                                <picture className='w-10 h-10 rounded-full shadow-md shadow-black overflow-hidden'>
+                            <div className='flex justify-start items-center py-1 ' key={item.friendKey} onClick={()=> handleFriends(item)}>
+                                <picture className='w-10 h-10 rounded-full shadow-md shadow-black overflow-hidden cursor-pointer'>
                                     <img src={auth.currentUser.uid === item.whoSendFriendRequestUid ? item.whoReceivedFriendRequestPhotoUrl : item.whoSendFriendRequestPhotoUrl} alt={boyChat} className='w-full h-full' />
                                 </picture>
                                 <div className='basis-[53%] flex flex-col justify-center items-start ml-1'>
-                                    <h1 className='text-sm font-semibold capitalize'>{auth.currentUser.uid === item.whoSendFriendRequestUid ? item.whoReceivedFriendRequestName : item.whoSendFriendRequestName}</h1>
+                                    <h1 className='text-sm font-semibold capitalize cursor-pointer'>{auth.currentUser.uid === item.whoSendFriendRequestUid ? item.whoReceivedFriendRequestName : item.whoSendFriendRequestName}</h1>
                                     <p className='text-xs'>{moment(item.createdAt, "DD MM YYYY, h:mm:ss a").toNow()}</p>
                                 </div>
                                 <div className='flex'>
